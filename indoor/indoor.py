@@ -1,3 +1,2 @@
-dkkdkkdkc kk n
-dkkdkds
-kdkdskdsk
+name = input("your name?").lower()
+print (name)
