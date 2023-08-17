@@ -1,5 +1,5 @@
-inputt = input("enter: ").title
-if inputt == ("42") or ("forty two") or ("forty-two"):
-    print ("Yes")
-else:
+inputt = input("enter: ").lower
+if inputt != ("42") and "forty two" and "forty_two":
     print ("No")
+else:
+    print ("Yes")
