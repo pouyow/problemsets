@@ -1,9 +1,9 @@
 koli = input("entet: ")
 flitt = koli.capitalize()[0].lower().strip()
-fword = koli.split(hello).lower().strip()
-if fword == ("hello") and fword != flitt:
+fword = koli.split()[0].lower().replace("," , "").strip()
+if fword == ("hello"):
     print ("$0")
-elif flitt == ("h") and flitt != fword:
+elif flitt == ("h"):
     print("$20")
 else:
     print("$100")
