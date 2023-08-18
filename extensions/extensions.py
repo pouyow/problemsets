@@ -3,7 +3,7 @@ dorost = immie[-1].strip().lower()
 if dorost == ("jpeg"):
     print("image/jpeg")
 elif dorost == ("jpg"):
-    print("image/jpg")
+    print("image/jpeg")
 elif dorost == ("png"):
     print("image/png")
 elif dorost == ("gif"):
