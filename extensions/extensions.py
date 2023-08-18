@@ -1,6 +1,5 @@
 immie = input("enter: ").split(".")
 dorost = immie[-1].strip().lower()
-print(dorost)
 if dorost == ("jpeg"):
     print("image/jpeg")
 elif dorost == ("jpg"):
