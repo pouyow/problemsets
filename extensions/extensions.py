@@ -11,8 +11,8 @@ elif dorost == ("gif"):
 elif dorost == ("txt"):
     print("text/plain")
 elif dorost == ("zip"):
-    print("zip/application")
+    print("application/zip")
 elif dorost == ("pdf"):
-    print("pdf/application")
+    print("application/pdf")
 else:
     print("application/octet-stream")
