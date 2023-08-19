@@ -1,3 +1,10 @@
+
+def convert(time):
+    tim = time.split(":")
+    hour = int(tim[0])
+    minute = int(tim[1]) / 100
+    return (hour + minute)
+
 def main():
     x = input("enter: ")
     y = convert (x)
@@ -7,9 +14,5 @@ def main():
         print ("lunch time")
     elif (18>=y<=19):
         print ("dinner time")
-def convert(time):
-    tim = time.split(":")
-    hour = int(tim[0])
-    minute = int(tim[1]) / 100
-    return (hour + minute)
+
 main()
