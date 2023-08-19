@@ -5,7 +5,7 @@ def main():
         print("breakfast time")
     elif (12 <= y >= 13):
         print ("lunch time")
-    elif (18 >= y <= 19):
+    elif (18 <= y >= 19):
         print ("dinner time")
 def convert(time):
     #or hour , minute = time.split(":")
