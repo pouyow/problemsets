@@ -1,7 +1,6 @@
 def main():
     x = input("enter: ")
     y = convert (x)
-    print (y)
     if y >= 7 and y <= 8:
         print("breakfast time")
     elif (12 <= y >= 13):
