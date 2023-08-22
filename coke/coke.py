@@ -5,4 +5,4 @@ while amount_due > (0):
     if coin == 5 or coin == 10 or coin == 25:
      amount_due -= coin
 chng = abs(amount_due)
-print("Change Owe:", chng)
+print("Change Owed:", chng)
