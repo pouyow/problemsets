@@ -4,7 +4,7 @@ def main():
     f=find(payam, q)
     for i in f:
          payam = payam.replace(i,"")
-    print(payam.strip)
+    print(payam)
 
 def find(payam, q):
      result=[]
