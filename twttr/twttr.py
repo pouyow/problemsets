@@ -1,5 +1,5 @@
 def main():
-    payam = input("enter: ").strip
+    payam = input("enter: ")
     q = ["e","a","i","u","o"]
     f=find(payam, q)
     for i in f:
