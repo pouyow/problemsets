@@ -1,7 +1,7 @@
 payam = input("enter: ")
-print("output:" , end="")
+q = ["e","a","i","u","o"]
 for letter in payam:
-    if not letter.lower in ["e","a","i","u","o"]:
+    if not letter.lower() in q:
       print(letter, end="")
 
 print()
