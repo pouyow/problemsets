@@ -12,13 +12,14 @@ def is_valid(plate):
 
    i = 0
    while i < len(plate):
-      if plate[i].isalpha() == False:
+      if plate[i].isalpha() == False and plate[i:].isalpha() == False:
        if plate[i] == "0":
+          return False
+       elif not plate[i:].isdigit():
           return False
        else:
           break
       i+=1
-
    for s in plate:
       if s in ["?","!"," ","."]:
          return False
