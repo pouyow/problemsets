@@ -12,7 +12,7 @@ d = {"Apple" : "130" ,
 "Orange" : "80" ,
 "Peach" : "60" ,
 "Pear" : "100" ,
-"Pineapple" : "50" ,
+"PineApple" : "50" ,
 "Plums" : "70",
 "Strawberries" : "50" ,
 "SweetCherries" : "100" ,
@@ -20,5 +20,6 @@ d = {"Apple" : "130" ,
 "Watermelon" : "80"}
 k = input("enter: ")
 for s in d:
-    if k in s:
+    if k in s.lower():
      print(s , d[s])
+    break
