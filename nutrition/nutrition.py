@@ -18,7 +18,7 @@ d = {"Apple" : "130" ,
 "SweetCherries" : "100" ,
 "Tangerine" : "50" ,
 "Watermelon" : "80"}
-k = input("enter: ")
+k = input("enter: ").lower
 for s in d:
     if k in s.lower():
      print(s , d[s])
