@@ -1,6 +1,6 @@
 def main():
    x = getxy("enter fuel range x/y: ")
-   print(f"{x}%")
+   print(f"{x * 100}%")
 
 def getxy(x):
  while True:
