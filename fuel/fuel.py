@@ -13,8 +13,9 @@ def getxy(x):
      ff = input("enter: ").split("/")
      x = int(ff[0])
      y = int(ff[1])
-     q = round(float(x/y *100))
-     return q
+     q = (round(float(x/y), 1)*100)
+     if q <= 100:
+      return q
 
     except (ValueError, ZeroDivisionError):
        pass
