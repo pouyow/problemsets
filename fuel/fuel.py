@@ -17,6 +17,6 @@ def getxy(x):
      if q <= 100:
       return q
 
-    except (ValueError, ZeroDivisionError, index):
+    except (ValueError, ZeroDivisionError, IndexError):
        pass
 main()
