@@ -11,9 +11,9 @@ def getxy(x):
  while True:
     try:
      ff = input("enter: ").split("/")
-     x = float(ff[0])
-     y = float(ff[1])
-     q = round(x/y *100)
+     x = int(ff[0])
+     y = int(ff[1])
+     q = float(round(x/y *100))
      return q
 
     except (ValueError, ZeroDivisionError):
