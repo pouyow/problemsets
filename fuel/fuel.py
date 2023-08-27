@@ -1,8 +1,8 @@
 def main():
    x = (getxy("enter fuel range x/y: "))
-   if x == 0 and 1:
+   if x == 0 or x==1:
      print ("E")
-   elif x == 100 and 99:
+   elif x == 100 or x== 99:
      print ("F")
    else:
      print(f"{x}%")
@@ -17,6 +17,6 @@ def getxy(x):
      if q <= 100:
       return q
 
-    except (ValueError, ZeroDivisionError):
+    except (ValueError, ZeroDivisionError, index):
        pass
 main()
