@@ -13,7 +13,7 @@ def getxy(x):
      ff = input("enter: ").split("/")
      x = int(ff[0])
      y = int(ff[1])
-     q = float(round(x/y *100))
+     q = round(float(x/y *100))
      return q
 
     except (ValueError, ZeroDivisionError):
