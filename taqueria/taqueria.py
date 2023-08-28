@@ -9,12 +9,14 @@ nar = [{
 "Taco": 3.00,
 "Tortilla Salad": 8.00
 }]
-
+s = 0
 while True:
     try:
         inp = input("Item: ").title()
         for i in nar:
-            print(i[inp])
+           k = i[inp]
+           s += k
+           print (s)
     except(KeyError):
         pass
     except(EOFError):
