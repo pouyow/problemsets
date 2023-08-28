@@ -16,7 +16,7 @@ while True:
         for i in nar:
            k = i[inp]
            s += k
-           print (s)
+           print round(s, 2)
     except(KeyError):
         pass
     except(EOFError):
