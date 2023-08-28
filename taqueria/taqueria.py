@@ -9,14 +9,14 @@ nar = [{
 "Taco": 3.00,
 "Tortilla Salad": 8.00
 }]
-s = 0
+round(s = 0 , 2)
 while True:
     try:
         inp = input("Item: ").title()
         for i in nar:
            k = i[inp]
            s += k
-           print round(s, 2)
+           print round(s)
     except(KeyError):
         pass
     except(EOFError):
