@@ -9,8 +9,6 @@ nar = [{
 "Taco": 3.00,
 "Tortilla Salad": 8.00
 }]
-s = 0
-round(s, 2)
 while True:
     try:
         inp = input("Item: ").title()
