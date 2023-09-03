@@ -13,7 +13,7 @@ q = [
 "December"
 ]
 while True:
-    ss = input("enter: ")
+    ss = input("enter: ").strip()
     try:
         m,d,y = ss.split("/")
         if int(m) <= 12 and int(d) <= 31:
@@ -25,9 +25,10 @@ while True:
             for i in range(len(q)):
                if mm == q[i]:
                 mm = i + 1
-            d = dd.replace(",", "")
-            if int(d) <= 31:
+            if dd[1] == (","):
+              d = dd.replace(",", "")
               print(f"{yy}-{(mm):02}-{int(d):02}")
               break
         except:
                 pass
+        
