@@ -1,4 +1,4 @@
-from emoji import emojize
+import emoji
 x = input("enter: ").replace(" ","_")
 s = emoji.emojize(x)
-print("out: ", s)
+print(s)
