@@ -4,7 +4,7 @@ import emoji
 x = input().strip()
 
 # Convert the input string to emojis with aliases enabled
-s = emoji.emojize(x, use_aliases=True)
+s = emoji.emojize(x, language='alias')
 
 # Print the resulting string
 print(s)
