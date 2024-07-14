@@ -1,5 +1,5 @@
 import emoji
 
-x = input()
-s = emoji.emojize(x)
+x = input().strip
+s = emoji.emojize(x, use_aliases=True)
 print(s)
