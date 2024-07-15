@@ -17,9 +17,9 @@ while True:
                             found = True
                             break
                         elif rand > g:
-                            print("too small")
+                            print("Too small!")
                         elif rand < g:
-                            print("too big")
+                            print("Too large!")
                         else:
                             False
                     else:
