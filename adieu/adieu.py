@@ -11,7 +11,7 @@ def format_names(names):
 names = []
 try:
     while True:
-        name = input("Enter a name (or press Ctrl+D to stop): ")
+        name = input("name")
         names.append(name)
 except EOFError:
      pass
