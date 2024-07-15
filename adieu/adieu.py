@@ -1,4 +1,4 @@
-def format_names(names):
+def formating(names):
     if len(names) == 0:
         return ""
     elif len(names) == 1:
@@ -16,5 +16,5 @@ try:
 except EOFError:
     pass
 
-formatted_names = format_names(names)
+formatted_names = formating(names)
 print(f"Adieu, adieu, to {formatted_names}")
