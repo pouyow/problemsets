@@ -6,15 +6,15 @@ def format_names(names):
     elif len(names) == 2:
         return " and ".join(names)
     else:
-        return ", ".join(names[:-1]) + " and " + names[-1]
+        return ", ".join(names[:-1]) + ", and " + names[-1]
 
 names = []
 try:
     while True:
-        name = input("name")
+        name = input("Name")
         names.append(name)
 except EOFError:
-     pass
+    pass
 
 formatted_names = format_names(names)
-print(f"Adieu, adieu, to{formatted_names}")
+print(f"Adieu, adieu, to {formatted_names}")
