@@ -4,6 +4,8 @@ import sys
 try:
     if len(sys.argv) != 2:
         sys.exit(1)
+    if not (sys.argv).isdigit:
+        sys.exit(1)
     n = sys.argv[1]
     int_n = float(n)
     response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
