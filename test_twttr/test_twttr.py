@@ -6,6 +6,7 @@ def main():
 def test_temp():
    try:
     assert shorten("pouya") == "py"
-   exept
+   except(1):
+      pass
 if __name__ == "__main__":
     main()
