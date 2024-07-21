@@ -4,9 +4,12 @@ def main():
     test_temp()
 
 def test_temp():
-   try:
     assert shorten("pouya") == "py"
-   except:
-      pass(1)
+    assert shorten("POUYA") == "PY"
+    assert shorten("Twitter") == "Twttr"
+    assert shorten("TwItter") == "Twttr"
+    assert shorten("1234") == "1234"
+    assert shorten("!@#$") == "!@#$"
+
 if __name__ == "__main__":
     main()
