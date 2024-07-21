@@ -1,4 +1,4 @@
-from twtter import shorten
+from twttr import shorten
 
 def main():
     test_temp()
@@ -8,4 +8,3 @@ def test_temp():
 
 if __name__ == "__main__":
     main()
-    
