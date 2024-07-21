@@ -4,12 +4,10 @@ def main():
     print(result)
 
 def value(greeting):
-    flitt = greeting.capitalize()[0].lower().strip()
-    fword = greeting.split()[0].lower().replace(",", "").strip()
-
-    if fword == "hello":
+    greeting = greeting.lower().strip()
+    if greeting == "hello":
         return "$0"
-    elif flitt == "h":
+    elif greeting.startswith("h"):
         return "$20"
     else:
         return "$100"
