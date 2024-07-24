@@ -32,7 +32,7 @@ def test_zero():
 
 def test_beginning():
     assert is_valid("AA1234") == True
-    assert is_valid("A1234") == True
+    assert is_valid("A1234") == False
     assert is_valid("1234AA") == False
     assert is_valid("AAA123") == True
 
