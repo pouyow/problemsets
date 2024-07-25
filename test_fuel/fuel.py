@@ -1,16 +1,16 @@
 def main():
-   x = (getxy("enter fuel range x/y: "))
-   if x == 0 or x == 1:
-     print ("E")
-   elif x == 100 or x == 99:
-     print ("F")
-   else:
-     print(f"{x}%")
+    x = (getxy("enter fuel range x/y: "))
+    if x == 0 or x == 1:
+        return "E"
+    elif x == 100 or x == 99:
+        return "F"
+    else:
+        return f"{x}%"
 
 def getxy(prompt):
     while True:
         try:
-            ff = input(prompt).split("/")
+            ff = prompt.split("/")
             x = int(ff[0])
             y = int(ff[1])
             q = round(float(x / y * 100))
@@ -20,4 +20,6 @@ def getxy(prompt):
             pass
 
 if __name__ == "__main__":
-    main()
+    result = main()
+    if result:
+        print(result)
