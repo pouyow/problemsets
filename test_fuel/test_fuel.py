@@ -16,6 +16,8 @@ def test_koli():
     assert gauge(100) == "F"
     assert convert("0/4") == 0
     assert gauge(0) == "E"
+    assert gauge(1) == "E"
+    assert gauge(99) == "F"
 
 if __name__ == "__main__":
     pytest.main()
