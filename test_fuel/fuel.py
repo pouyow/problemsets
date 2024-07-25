@@ -12,9 +12,9 @@ def convert(fraction):
     return round((x / y) * 100)
 
 def gauge(percentage):
-    if percentage <= 1:
+    if percentage == 0 or percentage == 1:
         return "E"
-    elif percentage >= 99:
+    elif percentage == 100 or percentage == 99:
         return "F"
     else:
         return f"{percentage}%"
