@@ -1,10 +1,5 @@
 import pytest
-from fuel import convert, guage
-
-def main():
-    test_zero()
-    test_sez()
-    test_koli()
+from fuel import convert, gauge
 
 def test_zero():
     with pytest.raises(ZeroDivisionError):
@@ -12,15 +7,15 @@ def test_zero():
 
 def test_sez():
     with pytest.raises(ValueError):
-        convert("kit/cat")
+        convert("2/1")
 
 def test_koli():
     assert convert("1/4") == 25
-    assert guage("1/4") == "25%"
+    assert gauge(25) == "25%"
     assert convert("4/4") == 100
-    assert guage("4/4") == "F"
+    assert gauge(100) == "F"
     assert convert("0/4") == 0
-    assert guage("0/4") == "E"
+    assert gauge(0) == "E"
 
 if __name__ == "__main__":
-    main()
+    pytest.main()

@@ -1,26 +1,23 @@
 def main():
-    fuel_percentage = guage(input("enter fuel range x/y: "))
-    print(fuel_percentage)
+    fraction = input("enter fuel range x/y: ")
+    percentage = convert(fraction)
+    print(gauge(percentage))
 
-def guage(fuel):
-    x = convert(fuel)
-    if x == 0:
+def convert(fraction):
+    x, y = map(int, fraction.split("/"))
+    if y == 0:
+        raise ZeroDivisionError("division by zero")
+    if x > y:
+        raise ValueError("x cannot be greater than y")
+    return round((x / y) * 100)
+
+def gauge(percentage):
+    if percentage <= 1:
         return "E"
-    elif x == 100:
+    elif percentage >= 99:
         return "F"
     else:
-        return f"{x}%"
-
-def convert(fuel):
-    try:
-        ff = fuel.split("/")
-        x = int(ff[0])
-        y = int(ff[1])
-        q = round(float(x / y * 100))
-        if q <= 100:
-            return q
-    except (ValueError, ZeroDivisionError, IndexError):
-        raise
+        return f"{percentage}%"
 
 if __name__ == "__main__":
     main()
