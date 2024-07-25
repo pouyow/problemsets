@@ -3,8 +3,9 @@ def main():
     try:
         percentage = convert(x)
         print(gauge(percentage))
-    except (ValueError, ZeroDivisionError) as e:
-        print(e)
+        exit(0)  # Exit code 0 for success
+    except (ValueError, ZeroDivisionError):
+        exit(1)  # Exit code 1 for error
 
 def convert(fraction):
     try:
