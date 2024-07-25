@@ -21,8 +21,8 @@ def test_convert():
     assert convert("0/1") == 0
 
 def test_gauge():
-    assert gauge(1) == "E"
-    assert gauge(99) == "F"
+    assert gauge(0) == "E"
+    assert gauge(100) == "F"
     assert gauge(25) == "25%"
 
 if __name__ == "__main__":
