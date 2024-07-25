@@ -1,5 +1,5 @@
 import pytest
-from fuel import getxy, main
+from fuel import getxy, ss
 
 def test_zero():
     with pytest.raises(ZeroDivisionError):
@@ -11,11 +11,11 @@ def test_sez():
 
 def test_koli():
     assert getxy("1/4") == 25
-    assert main("1/4") == "25%"
+    assert ss("1/4") == "25%"
     assert getxy("4/4") == 100
-    assert main("4/4") == "F"
+    assert ss("4/4") == "F"
     assert getxy("0/4") == 0
-    assert main("0/4") == "E"
+    assert ss("0/4") == "E"
 
 if __name__ == "__main__":
     pytest.main()
