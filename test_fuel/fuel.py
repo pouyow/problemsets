@@ -1,17 +1,21 @@
 def main():
-    fuel_range = input("Enter fuel range x/y: ")
-    percentage = convert(fuel_range)
-    print(gauge(percentage))
-
-def convert(fuel):
+    fraction = input("Enter fuel range x/y: ")
     try:
-        x, y = map(int, fuel.split('/'))
-        percentage = round((x / y) * 100)
-        if percentage > 100:
+        percentage = convert(fraction)
+        print(gauge(percentage))
+    except (ValueError, ZeroDivisionError) as e:
+        print(f"Error: {e}")
+
+def convert(fraction):
+    try:
+        x, y = map(int, fraction.split("/"))
+        if y == 0:
+            raise ZeroDivisionError
+        if x > y or x < 0 or y < 0:
             raise ValueError
-        return percentage
-    except (ValueError, ZeroDivisionError):
-        raise
+        return round(x / y * 100)
+    except ValueError:
+        raise ValueError("Invalid input")
 
 def gauge(percentage):
     if percentage == 0:
