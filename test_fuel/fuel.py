@@ -1,9 +1,9 @@
 def main():
-    fuel_percentage = ss(input("enter fuel range x/y: "))
+    fuel_percentage = guage(input("enter fuel range x/y: "))
     print(fuel_percentage)
 
-def ss(fuel):
-    x = getxy(fuel)
+def guage(fuel):
+    x = convert(fuel)
     if x == 0:
         return "E"
     elif x == 100:
@@ -11,7 +11,7 @@ def ss(fuel):
     else:
         return f"{x}%"
 
-def getxy(fuel):
+def convert(fuel):
     try:
         ff = fuel.split("/")
         x = int(ff[0])
