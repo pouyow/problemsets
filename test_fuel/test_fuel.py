@@ -1,21 +1,25 @@
 import pytest
-from fuel import getxy, ss
+from fuel import convert, gauge
 
 def test_zero():
     with pytest.raises(ZeroDivisionError):
-        getxy("1/0")
+        convert("1/0")
 
-def test_sez():
+def test_value_error():
     with pytest.raises(ValueError):
-        getxy("kit/cat")
+        convert("kit/cat")
+    with pytest.raises(ValueError):
+        convert("1/101")
 
-def test_koli():
-    assert getxy("1/4") == 25
-    assert ss("1/4") == "25%"
-    assert getxy("4/4") == 100
-    assert ss("4/4") == "F"
-    assert getxy("0/4") == 0
-    assert ss("0/4") == "E"
+def test_convert():
+    assert convert("1/4") == 25
+    assert convert("4/4") == 100
+    assert convert("0/4") == 0
+
+def test_gauge():
+    assert gauge(25) == "25%"
+    assert gauge(100) == "F"
+    assert gauge(0) == "E"
 
 if __name__ == "__main__":
     pytest.main()

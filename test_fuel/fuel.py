@@ -1,26 +1,25 @@
 def main():
-    fuel_percentage = ss(input("enter fuel range x/y: "))
-    print(fuel_percentage)
+    fuel_range = input("Enter fuel range x/y: ")
+    percentage = convert(fuel_range)
+    print(gauge(percentage))
 
-def ss(fuel):
-    x = getxy(fuel)
-    if x == 0:
+def convert(fuel):
+    try:
+        x, y = map(int, fuel.split('/'))
+        percentage = round((x / y) * 100)
+        if percentage > 100:
+            raise ValueError
+        return percentage
+    except (ValueError, ZeroDivisionError):
+        raise
+
+def gauge(percentage):
+    if percentage == 0:
         return "E"
-    elif x == 100:
+    elif percentage == 100:
         return "F"
     else:
-        return f"{x}%"
-
-def getxy(fuel):
-    try:
-        ff = fuel.split("/")
-        x = int(ff[0])
-        y = int(ff[1])
-        q = round(float(x / y * 100))
-        if q <= 100:
-            return q
-    except (ValueError, ZeroDivisionError, IndexError):
-        raise
+        return f"{percentage}%"
 
 if __name__ == "__main__":
     main()
