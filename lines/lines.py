@@ -1,13 +1,15 @@
 import sys
 
 def main():
-    if len(sys.argv) == 0 :
+    if len(sys.argv) < 2:
         print("Too few command-line arguments")
-    if len(sys.argv) > 2 :
+        sys.exit(1)
+    if len(sys.argv) > 2:
         print("Too many command-line arguments")
+        sys.exit(1)
     if not (sys.argv[1]).endswith(".py"):
-        sys.exit("Not a Python file")
-        return
+        print("Not a Python file")
+        sys.exit(1)
 
     filename = sys.argv[1]
     line_count = count(filename)
