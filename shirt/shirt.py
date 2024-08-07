@@ -29,7 +29,7 @@ def main():
     shirt = Image.open("shirt.png")
     size = shirt.size
 
-    image = ImageOps.fit(image, size, method=Image.Resampling.LANCZOS)
+    image = ImageOps.fit(image, size)
 
     image.paste(shirt, (0, 0), shirt)
 
