@@ -26,7 +26,7 @@ def main():
 
     image = ImageOps.fit(image, shirt.size, method=0, bleed=0.0, centering=(0.5, 0.5))
 
-    image.paste(shirt, shirt)
+    image.paste(shirt, (0, 0), shirt)
 
     image.save(output_image)
 
