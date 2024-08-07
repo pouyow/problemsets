@@ -3,7 +3,6 @@ import csv
 
 def main():
     if len(sys.argv) != 3:
-        print("Usage: python scourgify.py input.csv output.csv")
         sys.exit(1)
 
     input_file = sys.argv[1]
