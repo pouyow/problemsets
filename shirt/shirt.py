@@ -24,7 +24,7 @@ def main():
 
     shirt = Image.open("shirt.png")
 
-    image = ImageOps.fit(image, shirt.size, method=0, bleed=0.0, centering=(0.5, 0.5))
+    image = ImageOps.fit(image, shirt.size, method=Image.Resampling.LANCZOS)
 
     image.paste(shirt, (0, 0), shirt)
 
