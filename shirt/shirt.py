@@ -3,12 +3,10 @@ from PIL import Image, ImageOps
 
 def main():
     if len(sys.argv) != 3:
-        sys.exit(1)
-    if len(sys.argv) == 1:
-        sys.exit("Too few command-line arguments")
-
-    if len(sys.argv) > 2:
-        sys.exit("Too many command-line arguments")
+        if len(sys.argv) < 3:
+            sys.exit("Too few command-line arguments")
+        else:
+            sys.exit("Too many command-line arguments")
 
     input_image = sys.argv[1]
     output_image = sys.argv[2]
