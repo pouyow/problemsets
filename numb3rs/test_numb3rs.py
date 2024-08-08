@@ -12,3 +12,10 @@ def zero():
 
 def qqq():
     assert validitate("255.255.255.255") == True
+
+def ppp():
+    assert validitate("522.522.522.522") == False
+
+def qqq():
+    assert validitate("1.2.3.1000") == False
+
