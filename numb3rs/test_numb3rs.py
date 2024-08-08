@@ -17,6 +17,7 @@ def test_valid():
     assert validate("255.255.255.255") == True
     assert validate("127.0.0.1") == True
     assert validate("192.168.1.1") == True
+    assert validate("2.2.2") == False
 
 if __name__ == "__main__":
     main()
