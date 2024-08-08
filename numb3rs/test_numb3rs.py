@@ -5,6 +5,8 @@ def main():
     test_valid()
     test_first_byte_valid()
     test_first_byte_invalid()
+    test_full_ip_valid()
+    test_full_ip_invalid()
 
 def test_first_byte_valid():
     assert validate("0.0.0.0") == True
@@ -33,6 +35,15 @@ def test_valid():
     assert validate("255.255.255.255") == True
     assert validate("127.0.0.1") == True
     assert validate("192.168.1.1") == True
+def test_full_ip_valid():
+    assert validate("192.168.1.1") == True
+    assert validate("0.0.0.0") == True
+    assert validate("255.255.255.255") == True
+
+def test_full_ip_invalid():
+    assert validate("999.999.999.999") == False
+    assert validate("256.256.256.256") == False
+    assert validate("192.168.1.256") == False
 
 
 if __name__ == "__main__":
