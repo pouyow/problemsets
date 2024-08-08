@@ -1,27 +1,22 @@
 from numb3rs import validate
 
-
 def main():
-    cat()
-    zero()
-    qqq()
-    ppp()
-    qqq1()
+    test_invalid()
+    test_valid()
 
-def cat():
+def test_invalid():
     assert validate("cat") == False
-
-def zero():
-    assert validate("0.0.0.0") == True
-
-def qqq():
-    assert validate("255.255.255.255") == True
-
-def ppp():
-    assert validate("522.522.522.522") == False
-
-def qqq1():
+    assert validate("256.256.256.256") == False
     assert validate("1.2.3.1000") == False
+    assert validate("0.0.0.0.0") == False
+    assert validate("10.10.10") == False
+    assert validate("2001:0db8:85a3:0000:0000:8a2e:0370:7334") == False
+
+def test_valid():
+    assert validate("0.0.0.0") == True
+    assert validate("255.255.255.255") == True
+    assert validate("127.0.0.1") == True
+    assert validate("192.168.1.1") == True
 
 if __name__ == "__main__":
     main()
