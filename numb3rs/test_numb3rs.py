@@ -1,21 +1,27 @@
-from numb3rs import validitate
+from numb3rs import validate
 
 
 def main():
     cat()
+    zero()
+    qqq()
+    ppp()
+    qqq1()
 
 def cat():
-    assert validitate("cat") == False
+    assert validate("cat") == False
 
 def zero():
-    assert validitate("0.0.0.0") == True
+    assert validate("0.0.0.0") == True
 
 def qqq():
-    assert validitate("255.255.255.255") == True
+    assert validate("255.255.255.255") == True
 
 def ppp():
-    assert validitate("522.522.522.522") == False
+    assert validate("522.522.522.522") == False
 
-def qqq():
-    assert validitate("1.2.3.1000") == False
+def qqq1():
+    assert validate("1.2.3.1000") == False
 
+if __name__ == "__main__":
+    main()
