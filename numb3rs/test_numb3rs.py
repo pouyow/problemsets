@@ -3,7 +3,21 @@ from numb3rs import validate
 def main():
     test_invalid()
     test_valid()
+    test_first_byte_valid()
+    test_first_byte_invalid()
 
+def test_first_byte_valid():
+    assert validate("0.0.0.0") == True
+    assert validate("255.0.0.0") == True
+    assert validate("127.0.0.0") == True
+    assert validate("192.0.0.0") == True
+
+def test_first_byte_invalid():
+    assert validate("256.0.0.0") == False
+    assert validate("300.0.0.0") == False
+    assert validate("999.0.0.0") == False
+    assert validate("abc.0.0.0") == False
+    
 def test_invalid():
     assert validate("cat") == False
     assert validate("256.256.256.256") == False
