@@ -2,7 +2,6 @@ import re
 import sys
 
 def convert(s):
-    # الگوی regex برای شناسایی زمان‌ها
     pattern = r"^(\d{1,2})(?::(\d{2}))? (AM|PM) to (\d{1,2})(?::(\d{2}))? (AM|PM)$"
     match = re.match(pattern, s)
 
