@@ -1,21 +1,25 @@
 import re
+import sys
 
-def convert(time_str):
-    pattern = r'^(\d{1,2}):?(\d{2})? (AM|PM) to (\d{1,2}):?(\d{2})? (AM|PM)$'
-    match = re.match(pattern, time_str)
+def convert(s):
+    # الگوی regex برای شناسایی زمان‌ها
+    pattern = r"^(\d{1,2})(?::(\d{2}))? (AM|PM) to (\d{1,2})(?::(\d{2}))? (AM|PM)$"
+    match = re.match(pattern, s)
 
     if not match:
         raise ValueError("Invalid time format")
 
-    start_hour = int(match.group(1))
-    start_minute = int(match.group(2) or "00")
-    start_period = match.group(3)
-    end_hour = int(match.group(4))
-    end_minute = int(match.group(5) or "00")
-    end_period = match.group(6)
+    start_hour, start_minute, start_period, end_hour, end_minute, end_period = match.groups()
 
-    if not (0 <= start_hour <= 12) or not (0 <= start_minute < 60) or not (0 <= end_hour <= 12) or not (0 <= end_minute < 60):
-        raise ValueError("Invalid time value")
+    start_hour = int(start_hour)
+    end_hour = int(end_hour)
+    start_minute = int(start_minute) if start_minute else 0
+    end_minute = int(end_minute) if end_minute else 0
+
+    if not (0 <= start_hour <= 12 and 0 <= end_hour <= 12):
+        raise ValueError("Hour out of range")
+    if not (0 <= start_minute < 60 and 0 <= end_minute < 60):
+        raise ValueError("Minute out of range")
 
     if start_period == "PM" and start_hour != 12:
         start_hour += 12
@@ -27,7 +31,7 @@ def convert(time_str):
     elif end_period == "AM" and end_hour == 12:
         end_hour = 0
 
-    start_time = f"{start_hour:02}:{start_minute:02}"
-    end_time = f"{end_hour:02}:{end_minute:02}"
+    return f"{start_hour:02}:{start_minute:02} to {end_hour:02}:{end_minute:02}"
 
-    return f"{start_time} to {end_time}"
+if __name__ == "__main__":
+    print(convert(input("Hours: ")))
