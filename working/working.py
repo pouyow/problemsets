@@ -1,7 +1,9 @@
 import re
+import sys
 
 def convert(s):
-    pattern = r"(\d{1,2}):?(\d{2})? ?(AM|PM) to (\d{1,2}):?(\d{2})? ?(AM|PM)"
+    # الگوی regex برای شناسایی زمان‌ها
+    pattern = r"^(\d{1,2})(?::(\d{2}))? (AM|PM) to (\d{1,2})(?::(\d{2}))? (AM|PM)$"
     match = re.match(pattern, s)
 
     if not match:
@@ -13,6 +15,11 @@ def convert(s):
     end_hour = int(end_hour)
     start_minute = int(start_minute) if start_minute else 0
     end_minute = int(end_minute) if end_minute else 0
+
+    if not (0 <= start_hour <= 12 and 0 <= end_hour <= 12):
+        raise ValueError("Hour out of range")
+    if not (0 <= start_minute < 60 and 0 <= end_minute < 60):
+        raise ValueError("Minute out of range")
 
     if start_period == "PM" and start_hour != 12:
         start_hour += 12
