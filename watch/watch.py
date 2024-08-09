@@ -1,13 +1,13 @@
 import re
 
 def main():
-    html_input = input("HTML: ")
-    print(parse(html_input))
+    html = input("HTML: ")
+    print(parse(html))
 
 def parse(s):
-    match = re.search(r'src="https://www\.youtube\.com/embed/([a-zA-Z0-9_-]+)"', s)
+    match = re.search(r'<iframe [^>]*src="(https?://(?:www\.)?youtube\.com/embed/[^"]+)"', s)
     if match:
-        return f"https://youtu.be/{match.group(1)}"
+        return match.group(1)
     return None
 
 if __name__ == "__main__":
