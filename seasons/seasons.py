@@ -21,9 +21,9 @@ def minutes_lived(birthdate):
     minutes = days_lived * 24 * 60
 
     p = inflect.engine()
-    words = p.number_to_words(minutes, andword="").replace(",", "")
+    words = p.number_to_words(minutes, andword="")
 
-    return words.capitalize()
+    return words
 
 if __name__ == "__main__":
     main()
