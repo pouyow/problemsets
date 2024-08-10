@@ -23,7 +23,10 @@ def minutes_lived(birthdate):
     p = inflect.engine()
     words = p.number_to_words(minutes, andword="")
 
-    return words
+    # بزرگ کردن حروف اول کلمات
+    capitalized_words = words.capitalize()
+
+    return capitalized_words
 
 if __name__ == "__main__":
     main()
