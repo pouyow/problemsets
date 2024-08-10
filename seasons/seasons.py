@@ -1,9 +1,13 @@
 from datetime import date
 import inflect
+import sys
 
 def main():
     birthdate = input("Enter your birthdate (YYYY-MM-DD): ")
-    print(minutes_lived(birthdate))
+    if result := minutes_lived(birthdate):
+        print(result)
+    else:
+        sys.exit("Invalid date format")
 
 def minutes_lived(birthdate):
     try:
@@ -12,14 +16,12 @@ def minutes_lived(birthdate):
         return None
 
     today = date.today()
-
     days_lived = (today - birthdate).days
-
     minutes = days_lived * 24 * 60
 
     p = inflect.engine()
-    return p.number_to_words(minutes, andword="")
+    words = p.number_to_words(minutes, andword="")
+    return words.capitalize()
 
 if __name__ == "__main__":
     main()
-
