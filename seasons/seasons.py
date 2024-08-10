@@ -24,6 +24,8 @@ def minutes_lived(birthdate):
     words = p.number_to_words(minutes, andword="")
 
     words = words.replace(",", "").replace("  ", " ").capitalize()
+    words = " ".join([word.capitalize() for word in words.split()])
+
     return words
 
 if __name__ == "__main__":
