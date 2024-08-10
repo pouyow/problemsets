@@ -4,10 +4,11 @@ import sys
 
 def main():
     birthdate = input("Enter your birthdate (YYYY-MM-DD): ")
-    if result := minutes_lived(birthdate):
+    result = minutes_lived(birthdate)
+    if result:
         print(result)
     else:
-        sys.exit("Invalid date format")
+        sys.exit(1)
 
 def minutes_lived(birthdate):
     try:
@@ -21,7 +22,9 @@ def minutes_lived(birthdate):
 
     p = inflect.engine()
     words = p.number_to_words(minutes, andword="")
-    return words.capitalize()
+
+    words = words.replace(",", "").replace("  ", " ").capitalize()
+    return words
 
 if __name__ == "__main__":
     main()
